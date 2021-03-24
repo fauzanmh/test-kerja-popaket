@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    * {box-sizing: border-box}
+
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.main {
+    width: 100%;
+    content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+.nav {
+  overflow: hidden;
+  background-color: #333;
+  width: 100%;
+  padding-left: 50px;
+  height: 60px;
+}
+
+.nav img {
+  float: left;
+  display: block;
+  width: 10%;
+  padding: 14px 16px;
+}
+
+.nav-link {
+  overflow: hidden;
+  background-color: #333;
+  width: 100%;
+  padding-right: 50px;
+  height: 60px;
+}
+
+.nav-link a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 20px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.brand {
+    float:left;
+    padding-left: 50px;
+}
+
+.menu {
+    float: right;
+    padding-right: 50px;
+}
+.search {
+  padding: 6px;
+  margin-top: 14px;
+  margin-right: 16px;
+  border: none;
+  font-size: 17px;
+}
+ 
+@media screen and (max-width: 600px) {
+
+.column {
+    width: 100%;
+}
+
+.nav {
+    padding: 0px;
+}
+
+.nav img {
+  width: 16%;
+}
+  
+.nav-link {
+  position: fixed;
+    bottom: 0;
+    padding: 0px;
+}
+
+.nav-link a {
+  width: 25%;
+  text-align: center; 
+}
+
+.brand {
+    float: none;
+    padding-left: 0px;
+}
+
+.menu {
+    padding-right: 0px;
+    float: none;
+}
+}
+</style>
+</head>
+<body>
+<div id="main" class="main">
+    <div class="column">
+
+        <div id="brand" class="nav">
+            <img  src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDQ5NSA0OTUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5NSA0OTU7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwb2x5Z29uIHN0eWxlPSJmaWxsOiNDRDJBMDA7IiBwb2ludHM9IjI0Ny41LDAgMjQ3LjUsNDAgNDU1LDQwIDQ1NSw0NTUgMjQ3LjUsNDU1IDI0Ny41LDQ5NSA0OTUsNDk1IDQ5NSwwIAkiLz4NCgk8cG9seWdvbiBzdHlsZT0iZmlsbDojRkY1MDIzOyIgcG9pbnRzPSI0MCw0NTUgNDAsNDAgMjQ3LjUsNDAgMjQ3LjUsMCAwLDAgMCw0OTUgMjQ3LjUsNDk1IDI0Ny41LDQ1NSAJIi8+DQoJPHBhdGggc3R5bGU9ImZpbGw6I0ZGNTAyMzsiIGQ9Ik0yNDcuMSw0MDVsMTEzLjgwMy0zMS44OTFMMzg2LjEwMyw5MEgxMDguODk3TDEzNC4xLDM3My4xMDlMMjQ3LjEsNDA1eiBNMzM0LjUxOCwxNDcuODg2DQoJCWwtMy4xNSwzNC40NTZIMTk4LjY3N2wyLjk0OCwzNS42MzFoMTI2Ljc5NGwtOS44NTMsMTA3LjFsLTcwLjY3NSwxOS40ODN2MC4xOTlIMjQ3LjFsLTcxLjI2Ny0xOS42ODJsLTQuMzI5LTU0LjczNmgzNC40NTMNCgkJbDIuNTU5LDI3LjU2M2wzOC41ODQsMTAuNDNsMzguNzg0LTEwLjQzbDQuMzQxLTQ0Ljg4M2gtMTIwLjQ5bC05LjI1Mi0xMDUuMTMxSDMzNC41MTh6Ii8+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==" />
+                <input class="search" placeholder="Search"/>   
+            </div>
+    </div>
+    <div class="column">
+        <div class="nav-link">
+            <a href="#"><i class="fa fa-fw fa-home"></i></a>
+            <a href="#"><i class="fa fa-fw fa-search"></i></a>
+            <a href="#"><i class="fa fa-fw fa-envelope"></i></a>
+            <a href="#"><i class="fa fa-fw fa-user"></i></a>
+          </div>
+    </div>
+
+</div>
+
+</body>
+</html>

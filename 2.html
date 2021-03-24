@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+	body {
+		background-color: #FF7B73;
+		margin: 0;
+		font-family: Arial, Helvetica, sans-serif;
+		box-sizing:border-box;
+	}
+
+	.centered {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.border {
+		padding: 20px;
+		background-color: white;
+		border-radius: 100px;
+		width: 100%;
+		color: #FF7B73;
+		text-align: center;
+	}
+
+	.border .active {
+		transition: width 5s;
+		width: 1000px;
+	}
+
+	.border > span {
+		font-size: 48px;
+		cursor: pointer;
+	}
+
+	.input {
+		border:none;
+		background-color:none;
+		color: #FF7B73;
+		padding: 15px 32px;
+		text-align: left;
+		text-decoration: none;
+		font-size: 24px;
+		width: 100%;
+	}
+
+	.input:focus {
+		outline: none;
+	}
+
+	.button {
+		float: right;
+		background-color: #FF7B73;
+		border: none;
+		color: white;
+		padding: 15px 32px;
+		text-align: center;
+		text-decoration: none;
+		font-size: 24px;
+		cursor: pointer;
+		border-radius: 50px;
+	}
+
+	.button:disabled {
+		color: #C9CACA;
+		cursor:default;
+	}
+
+	::placeholder {
+		color:#FF7B73;
+	}
+</style>
+</head>
+<body>
+	<div class="centered">
+		<div id="label" class="border" onclick="showInput()">
+			<span>Notify me</span>
+		</div>
+		<div id="input" class="border">
+			<input type="submit" onclick="send()" value="Send" class="button" id="button" />
+			<div style="overflow: hidden; padding-right: .5em;" >
+				<input id="email" class="input" type="email" autocomplete="off" name="email" placeholder="E-mail" onkeyup="checkInput()"/>
+			</div>
+		</div>
+		<div id="notif" class="border">
+			<span>Thank You!</span>
+		</div>
+	</div>
+<script>
+	var label = document.getElementById('label');
+	var input = document.getElementById('input');
+	var notif = document.getElementById('notif');
+	var email = document.getElementById('email');
+	var button = document.getElementById('button');
+
+	function initial() {
+		input.style.display = 'none';
+		notif.style.display = 'none';
+		button.disabled = true;
+	}
+
+	function showInput() {
+		label.style.display = 'none';
+		input.style.display = 'block';
+		input.classList.add('active');
+	}
+
+	function checkInput() {
+		var value = email.value
+		
+		if (value.length > 0) {
+			button.disabled = false;
+		} else {
+			button.disabled = true;
+		}
+
+	}
+
+	function send() {
+		email.value = '';
+		input.style.display = 'none';
+		notif.style.display = 'block';
+
+		setTimeout(() => {
+			notif.style.display = 'none';
+			label.style.display = 'block';
+		}, 2000);
+	}
+
+	window.onload = initial();
+</script>
+</body>
+</html>

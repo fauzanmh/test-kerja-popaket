@@ -67,6 +67,25 @@
 	::placeholder {
 		color:#FF7B73;
 	}
+
+	@media screen and (max-width: 600px) {
+		.border > span {
+			font-size: 24px;
+		}
+
+		.responsive {
+			width: 80vw;
+		}
+
+		.input {
+			font-size: 16px;
+		}
+
+		.button {
+			font-size: 16px;
+		}
+
+	}
 </style>
 </head>
 <body>
@@ -74,9 +93,9 @@
 		<div id="label" class="border" onclick="showInput()">
 			<span>Notify me</span>
 		</div>
-		<div id="input" class="border">
+		<div id="input" class="border responsive">
 			<input type="submit" onclick="send()" value="Send" class="button" id="button" />
-			<div style="overflow: hidden; padding-right: .5em;" >
+			<div style="overflow: hidden; padding-right: 1em;" >
 				<input id="email" class="input" type="email" autocomplete="off" name="email" placeholder="E-mail" onkeyup="checkInput()"/>
 			</div>
 		</div>
@@ -100,7 +119,6 @@
 	function showInput() {
 		label.style.display = 'none';
 		input.style.display = 'block';
-		input.classList.add('active');
 	}
 
 	function checkInput() {
@@ -118,6 +136,7 @@
 		email.value = '';
 		input.style.display = 'none';
 		notif.style.display = 'block';
+		button.disabled = true;
 
 		setTimeout(() => {
 			notif.style.display = 'none';
